@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"ansible.python.interpreterPath": "/bin/python3",
+		"ansible.schemas": {
+			"ansible://yaml": "*.yml" // associate all .yml files with the Ansible schema
+		}
+	}
+}

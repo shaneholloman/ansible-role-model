@@ -1,0 +1,14 @@
+---
+# No requirements
+roles: []
+collections: []
+
+# Has requirements
+# -----------------------------------
+# roles:
+#   - name: shaneholloman.core
+#     version: 1.0.0
+
+# collections:
+#   - name: community.general
+#     version: 3.0.0
