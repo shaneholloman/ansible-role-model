@@ -70,7 +70,7 @@ git tag -a $tagVersion -m "$tagMessage"
 
 # Ask the user if the current git tag and message are correct
 echo "The current git tag is $tagVersion with the message '$tagMessage'. Is this correct? (yes/no)"
-read answer
+read -r answer
 
 if [ "$answer" != "${answer#[Yy]}" ] ;then
   git push origin $tagVersion
