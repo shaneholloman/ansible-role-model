@@ -6,7 +6,7 @@ name: Remove
 
 defaults:
   run:
-    working-directory: 'shaneholloman.core'
+    working-directory: 'shaneholloman.model'
 
 jobs:
 
@@ -17,7 +17,7 @@ jobs:
       - name: Check out the codebase.
         uses: actions/checkout@v4
         with:
-          path: 'shaneholloman.core'
+          path: 'shaneholloman.model'
 
       - name: Set up Python 3.
         uses: actions/setup-python@v4

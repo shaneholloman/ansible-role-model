@@ -6,7 +6,7 @@ collections: []
 # Has requirements
 # -----------------------------------
 # roles:
-#   - name: shaneholloman.core
+#   - name: shaneholloman.model
 #     version: 1.0.0
 
 # collections:
