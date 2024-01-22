@@ -1,5 +1,7 @@
 # Ansible Role Creation Process
 
+This doc will explain how to build an Ansible role from scratch then pushed to GitHub and subsequently deploy to Ansible Galaxy for playbook consumption. Playbook flow is not covered here.
+
 [[toc]]
 
 ## Ansible Role Initialization
@@ -53,11 +55,9 @@ Finally, you need to write the correct metadata for your role. You can find an e
 
 ## Ansible Role Testing
 
-This part may seem like magic, but the reason it just works is because we are using the docker images I have created for this purpose. Molecule will pull the image from Docker Hub and run the tests in the container on your machine. This is the same process that will be used in the CI/CD pipeline.
+This part may seem like magic, but the reason it just works is because we are using the docker images I have already created and posted to DockerHub for this purpose. Molecule will pull the image from DockerHub and run the tests in the container on your machine. This is the same process that will be used in the CI/CD pipeline on GitHub via the Action workflows.
 
-!!! note Note:
-
-    This is why we need to set the environment variables for Docker Hub and Galaxy in the GitHub repository
+> :exclamation: **Note:** This is why we need to set the environment variables for Docker Hub and Galaxy in the GitHub repository.
 
 ```sh
 molecule test
@@ -65,9 +65,21 @@ molecule test
 
 ## Write the Ansible Role Readme file
 
-This will based on the initialized template
+This will be based on the initialized template
 
-## Ansible Role GitHub Deploy and CI
+## Setup CI (GitHub Actions Workflows)
+
+The dir `./.github` is where you'll find the GitHub Actions workflow magic. Usually you'll not have to make many changes in here.
+
+```sh
+.github/workflows/ci.yml
+.github/workflows/release.yml
+.github/workflows/remove.yml
+```
+
+Replace the `shaneholloman.model` with the rolename you are working on. This is the name of the role to be on Ansible Galaxy.
+
+## Ansible Role GitHub Deploy and CI Trigger
 
 You can do this manually or simply use the [kickstart script](ansible-role-model/kickstart.sh)
 
@@ -219,3 +231,11 @@ Here's a step-by-step breakdown of what the script does, including the correspon
     echo "Please edit the git tag and message in this script."
     fi
     ```
+
+## Here's a review of what we did
+
+We just went through the process of creating an Ansible role from scratch, pushing it to GitHub, and deploying it to Ansible Galaxy for playbook consumption.
+
+We started by initializing the Ansible Galaxy role skeleton and renaming it for GitHub compatibility. We then initialized a Molecule scenario for testing and added necessary files while removing unnecessary ones. We wrote the correct metadata for the role and outlined the Ansible role development workflow, which includes writing role tasks, handlers, variables, templates, files, defaults, and metadata.
+
+We also covered how to test the role using Molecule and Docker, and how to write the Ansible role readme file. We set up continuous integration using GitHub Actions workflows and deployed the role to GitHub, triggering the CI process. This included defining the GitHub account, initializing a new git repository, creating a new repository on GitHub, adding the remote repository, committing and pushing changes, defining and checking environment variables, setting secrets for the repository, and tagging and pushing after setting the secrets.

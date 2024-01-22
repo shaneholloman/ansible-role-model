@@ -43,6 +43,9 @@ do
 done
 
 if [ ${#missingVars[@]} -ne 0 ]; then
+  ## Print 2 blank lines here to make the output easier to read
+  echo ""
+  echo ""
   echo "The following environment variables are missing:"
   for var in "${missingVars[@]}"
   do
@@ -69,6 +72,9 @@ git commit --allow-empty -m "$commitMessage"
 git tag -a $tagVersion -m "$tagMessage"
 
 # Ask the user if the current git tag and message are correct
+## Print 2 blank lines here to make the output easier to read
+echo ""
+echo ""
 echo "The current git tag is $tagVersion with the message '$tagMessage'. Is this correct? (yes/no)"
 read -r answer
 
