@@ -81,7 +81,7 @@ Replace the `shaneholloman.model` with the rolename you are working on. This is 
 
 ## Ansible Role GitHub Deploy and CI Trigger
 
-You can do this manually or simply use the [kickstart script](ansible-role-model/kickstart.sh)
+You can do this manually or simply use the [kickstart script](./kickstart.sh)
 
 ```sh
 bash kickstart.sh
