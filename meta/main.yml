@@ -11,7 +11,7 @@ galaxy_info:
 
   license: "license (Unlicense)"
 
-  min_ansible_version: "2.1"
+  min_ansible_version: "2.12"
 
   # If this a Container Enabled role, provide the minimum Ansible Container version.
   # min_ansible_container_version:
@@ -32,5 +32,3 @@ galaxy_info:
 
 dependencies: []
 
-# Be sure to remove the '[]' above, if you add dependencies to this list.
-# List your role dependencies here, one per line.
